@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { WebView, View, StyleSheet, Platform } from 'react-native';
+import { WebView, View, StyleSheet, Platform,ActivityIndicator,Alert } from 'react-native';
 import renderChart from './renderChart';
 import renderChartNoFirst from './renderChart'
 import echarts from './echarts.min';
@@ -41,6 +41,14 @@ export default class App extends Component {
             height: this.props.height || 400,
             backgroundColor: this.props.backgroundColor || 'transparent'
           }}
+          startInLoadingState={true}
+          renderLoading={()=>{
+              return <ActivityIndicator style={{marginTop: 30}}/>
+          }}
+          onError={()=>{
+            Alert.alert('图表加载失败')
+          }}
+          originWhitelist={["*"]}
           // source={require('./tpl.html')}
           source={Platform.OS == 'android'?{uri: 'file:///android_asset/tpl.html'}:require('./tpl.html')}
         />
