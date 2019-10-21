@@ -7,13 +7,11 @@ export default function renderChart(props,isFirst) {
       return `
     document.getElementById('main').style.height = "${height}px";
     myChart = echarts.init(document.getElementById('main'));
-    myChart.clear();
     myChart.setOption(${toString(props.option)});
   `
     }else{
       return `
     document.getElementById('main').style.height = "${height}px";
-    myChart.clear();
     myChart.setOption(${toString(props.option)},true);
   `
     }

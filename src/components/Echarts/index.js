@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { WebView, View, StyleSheet, Platform,ActivityIndicator,Alert } from 'react-native';
+import { WebView, View, StyleSheet, Platform,Alert } from 'react-native';
 import renderChart from './renderChart';
 import renderChartNoFirst from './renderChart'
 import echarts from './echarts.min';
@@ -42,9 +42,6 @@ export default class App extends Component {
             backgroundColor: this.props.backgroundColor || 'transparent'
           }}
           startInLoadingState={true}
-          renderLoading={()=>{
-              return <ActivityIndicator style={{marginTop: 30}}/>
-          }}
           onError={()=>{
             Alert.alert('图表加载失败')
           }}
