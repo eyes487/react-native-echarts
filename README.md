@@ -8,6 +8,11 @@
 
 $ npm install native-echarts --save
 
+同时需要安装 webView,已经安装就可以跳过
+
+$ npm install react-native-webview --save
+
+
 ## Usage
 
 The Usage is complete consistent with Echarts
